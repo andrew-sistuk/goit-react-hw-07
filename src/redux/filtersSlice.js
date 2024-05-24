@@ -11,6 +11,11 @@ export const filtersSlice = createSlice({
   },
 });
 
+// export const filtersSlice = createSlice({
+//   name: 'filters',
+//   initialState: { name: '', isLoading: false, error: null },
+// });
+
 export const { filterContacts } = filtersSlice.actions;
 
 export default filtersSlice.reducer;

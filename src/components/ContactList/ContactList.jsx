@@ -5,6 +5,7 @@ import { selectNameFilter, selectContacts } from '../../redux/selectors';
 
 export function ContactList() {
   const currentContacts = useSelector(selectContacts);
+  console.log(currentContacts);
   const filter = useSelector(selectNameFilter);
 
   const visibleValue = currentContacts.filter(
