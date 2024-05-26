@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useId } from 'react';
 import * as Yup from 'yup';
 
-import { addContact } from '../../redux/contactsSlice';
+// import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contactsOps';
+
 import { initialValues } from '../../redux/constants';
 
 import css from './ContactForm.module.css';

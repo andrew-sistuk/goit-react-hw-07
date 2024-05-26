@@ -6,13 +6,14 @@ import { useEffect } from 'react';
 import { fetchContacts } from './redux/contactsOps';
 import { SkewLoader } from 'react-spinners';
 import { useSelector } from 'react-redux';
-import { selectContactsLoading } from './redux/selectors';
+import { selectContactsLoading, selectContactsError } from './redux/selectors';
 
 export default function App() {
-
   const dispatch = useDispatch();
+
   const loading = useSelector(selectContactsLoading);
-  
+  const error = useSelector(selectContactsError);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -20,10 +21,10 @@ export default function App() {
   return (
     <Layout>
       <h1>Phonebook</h1>
-      {/* <ContactForm />
-      <SearchBox /> */}
-      <ContactList />
+      <ContactForm />
+      <SearchBox />
       {loading && <SkewLoader color="#646cff" />}
+      {error ? error : <ContactList />}
     </Layout>
   );
 }
