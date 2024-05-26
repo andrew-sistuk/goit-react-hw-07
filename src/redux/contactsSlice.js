@@ -57,8 +57,9 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
+        console.log(action.payload);
         state.items.splice(
-          state.items.findIndex(item => item.id === action.payload),
+          state.items.findIndex(item => item.id === action.payload.id),
           1
         );
       })
@@ -67,7 +68,6 @@ const contactsSlice = createSlice({
       .addCase(editContact.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        console.log
         state.items[state.items.findIndex(item => item.id === action.payload.id)] = action.payload;
         state.editingContact = EDITING_CONTACT;
       })
