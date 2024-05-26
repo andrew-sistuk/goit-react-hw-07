@@ -1,11 +1,13 @@
 import 'modern-normalize';
 
-import { Layout, ContactForm, SearchBox, ContactList } from 'components';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from './redux/contactsOps';
 import { SkewLoader } from 'react-spinners';
 import { useSelector } from 'react-redux';
+
+import { Layout, ContactForm, SearchBox, ContactList } from 'components';
+
 import { selectContactsLoading, selectContactsError } from './redux/selectors';
 
 export default function App() {

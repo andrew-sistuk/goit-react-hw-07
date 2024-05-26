@@ -1,4 +1,4 @@
-export const initialValues = {
+export const INITIAL_VALUE = {
     name: '',
     number: '',
   };

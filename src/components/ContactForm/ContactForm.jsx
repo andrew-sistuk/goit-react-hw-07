@@ -3,10 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useId } from 'react';
 import * as Yup from 'yup';
 
-// import { addContact } from '../../redux/contactsSlice';
 import { addContact } from '../../redux/contactsOps';
-
-import { initialValues } from '../../redux/constants';
+import { INITIAL_VALUE } from '../../redux/constants';
 
 import css from './ContactForm.module.css';
 
@@ -30,7 +28,7 @@ export function ContactForm() {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FeedbackSchema}>
+    <Formik initialValues={INITIAL_VALUE} onSubmit={handleSubmit} validationSchema={FeedbackSchema}>
       <Form className={css['contact-form']}>
         <label htmlFor={`${id}-name`}>Name</label>
         <Field
