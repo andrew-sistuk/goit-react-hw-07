@@ -63,7 +63,7 @@ const contactsSlice = createSlice({
           1
         );
       })
-      .addCase(editContact.rejected, handleRejected)
+      .addCase(deleteContact.rejected, handleRejected)
 
       .addCase(editContact.fulfilled, (state, action) => {
         state.loading = false;
@@ -71,7 +71,7 @@ const contactsSlice = createSlice({
         state.items[state.items.findIndex(item => item.id === action.payload.id)] = action.payload;
         state.editingContact = EDITING_CONTACT;
       })
-      .addCase(deleteContact.rejected, (state, action) => {
+      .addCase(editContact.rejected, (state, action) => {
         state.editingContact = EDITING_CONTACT;
         state.error = action.payload;
       });
